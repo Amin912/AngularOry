@@ -75,3 +75,19 @@
     width: 288px;
     height: 34px;
   }
+
+  .login-failed{
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    border: 2px solid black;
+    width: 65%;    
+    background-color: red;
+}
+
+.login-failed-text{
+    text-align: center;
+    margin-top: 5px;
+    font-weight: bold;    
+    color: aliceblue;
+}

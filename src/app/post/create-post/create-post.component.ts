@@ -17,6 +17,7 @@ export class CreatePostComponent implements OnInit {
   createPostForm: FormGroup;
   postPayload: CreatePostPayload;
   subreddits: Array<SubredditModel>;
+  isError: boolean;
 
   constructor(private router: Router, private postService: PostService,
     private subredditService: SubredditService) {
@@ -38,6 +39,7 @@ export class CreatePostComponent implements OnInit {
     this.subredditService.getAllSubreddits().subscribe((data) => {
       this.subreddits = data;
     }, error => {
+      
       throwError(error);
     });
   }
@@ -51,6 +53,7 @@ export class CreatePostComponent implements OnInit {
     this.postService.createPost(this.postPayload).subscribe((data) => {
       this.router.navigateByUrl('/');
     }, error => {
+      this.isError=true;
       throwError(error);
     })
   }

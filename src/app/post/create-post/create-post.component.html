@@ -12,7 +12,7 @@
             <input type="text" class="form-control" [formControlName]="'url'" style="margin-top: 5px" placeholder="URL">
   
             <select class="form-control" style="margin-top: 10px" [formControlName]="'subredditName'">
-              <option value="" selected disabled>Select Subreddit</option>
+              <option value="" selected disabled>Select forum</option>
               <option *ngFor="let subreddit of subreddits">{{subreddit.name}}</option>
             </select>
   
@@ -35,6 +35,9 @@
                 <button class="btnCreatePost">Post</button>
               </div>
             </span>
+            <div class="login-failed mt-5" *ngIf='this.isError'>
+                             <p class="login-failed-text ">You don't have access to post.</p>   
+                        </div>
           </div>
         </form>
       </div>
